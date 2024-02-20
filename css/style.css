@@ -10,8 +10,13 @@
 }
 
 body {
-    min-width: 80%;
+    min-width: 100%;
     min-height: 100vh;
+    background: linear-gradient(#5074a0, #172944);
+    overflow-x: hidden;
+}
+
+.header {
     background: linear-gradient(#5074a0, #172944);
     overflow-x: hidden;
 }
@@ -37,6 +42,12 @@ h2 {
     align-items: center;
     z-index: 100;
     background-color: rgba(255, 255, 255, 0.445);
+    position: fixed;
+    z-index: 1000;
+}
+
+.close {
+    visibility: hidden;
 }
 
 .logo {
@@ -52,7 +63,7 @@ nav ul {
     display: flex;
     flex-direction: row;
     justify-content: end;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 nav li {
@@ -76,9 +87,8 @@ nav a .active {
 
 .parallax_box {
     position: relative;
-    width: 100%;
-    height: 57rem;
-
+    height: 100vh;
+    background: linear-gradient(#6a94c6, #172944);
 
 }
 
@@ -90,7 +100,7 @@ nav a .active {
     height: 10rem;
     padding-top: 40px;
     background: linear-gradient(transparent, #fff, #eff2f8, #d6ddeb);
-    z-index: 1000;
+    z-index: 850;
 }
 
 .parallax_box img {
@@ -108,7 +118,7 @@ nav a .active {
     font-size: 13vh;
     z-index: 10;
     text-shadow: 3px 3px 5px #0c1c33;
-    padding-top: 12rem;
+    padding-top: 13rem;
     z-index: 100;
     /* transform: translateY(200px); */
 
@@ -138,4 +148,65 @@ nav a .active {
     padding: 15rem 3rem;
     background: #d6ddeb;
     min-width: fit-content;
+}
+
+
+.header .mobile-menu {
+    margin-left: 0;
+}
+
+.menu-hamburger {
+    display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+    .header {
+        background: #0c1c33;
+    }
+
+    .nav-links {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .title {
+        padding-top: 9rem;
+    }
+
+    nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: #161736;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        position: absolute;
+        top: 35px;
+        right: 25px;
+        width: 35px;
+        z-index: 100;
+    }
+
+
+    nav ul,
+    nav a {
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        color: #d6ddeb;
+    }
+
+    .logo {
+        color: #0c1c33;
+    }
+
 }
